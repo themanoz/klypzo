@@ -3,7 +3,7 @@ import { ElevenLabsClient } from "elevenlabs";
 import { Readable } from "stream";
 import { Buffer } from "buffer";
 
-const client = new ElevenLabsClient({ apiKey: process.env.ELEVENLABS_API_KEY });
+const client = new ElevenLabsClient({ apiKey: "process.env.ELEVENLABS_API_KEY" });
 
 async function streamToBuffer(stream: Readable): Promise<Buffer> {
   const chunks: Uint8Array[] = [];

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Together from "together-ai";
 
 const together = new Together({
-  apiKey: process.env.TOGETHER_API_KEY,
+  apiKey: "process.env.TOGETHER_API_KEY",
 });
 
 export async function POST(req: NextRequest) {
