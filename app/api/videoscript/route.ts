@@ -10,7 +10,13 @@ export async function POST(req: NextRequest) {
     console.log(result.response.text());
 
     return NextResponse.json({ result: JSON.parse(result.response.text()) });
-  } catch (error: any) {
-    return NextResponse.json("error", error);
+  } catch (error) {
+    console.error("Error creating folder", error);
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    return NextResponse.json(
+      { message: `Failed to generate videoScript: ${errorMessage}` },
+      { status: 500 }
+    );
   }
 }

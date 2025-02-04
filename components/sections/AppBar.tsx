@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 // import { ModeToggle } from "./mode-toggle";
 
 export default function AppBar() {
