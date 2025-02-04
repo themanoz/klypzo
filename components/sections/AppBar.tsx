@@ -27,7 +27,7 @@ export default function AppBar() {
   }
 
   return (
-    <header className="flex justify-between items-center py-4 px-4 md:px-10 lg:px-20 border-b">
+    <header className="flex justify-between items-center py-4 px-4 md:px-10 lg:px-36">
       <Link
         href={"/"}
         className="flex items-center gap-0 text-2xl font-semibold"

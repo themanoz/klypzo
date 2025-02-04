@@ -25,7 +25,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${spaceGrotesk.className} `}>
           {/* <ThemeProvider attribute="class" defaultTheme="system"> */}
-          {/* <AppBar /> */}
+          <AppBar />
           {children}
           {/* </ThemeProvider> */}
         </body>
