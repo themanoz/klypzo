@@ -3,7 +3,8 @@ import { WordRotate } from "@/components/ui/word-rotate";
 import { Button } from "@/components/ui/button";
 // import ListVideos from "@/components/ListVideos";
 import ModalVideo from "@/components/modal-video";
-import dark from "@/public/dark.png"
+import dark from "@/public/dark.png";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -23,9 +24,11 @@ export default function Hero() {
             Transform ideas into captivating AI-powered short videos with Klypzo
             perfect for creators and marketers.
           </p>
+          <Link href={"/signup"}>
             <Button variant={"default"} className="rounded-full">
               Get started
             </Button>
+          </Link>
           {/* </div> */}
         </div>
 

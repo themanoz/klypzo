@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { MoveRight, SquarePlay } from "lucide-react";
+import Link from "next/link";
 
 function CTA() {
   return (
@@ -17,10 +18,12 @@ function CTA() {
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <Button>
-              Try now <MoveRight className="w-3 h-3" />
-            </Button>
-            <Button variant={"secondary"} >
+            <Link href={"/signin"}>
+              <Button>
+                Try now <MoveRight className="w-3 h-3" />
+              </Button>
+            </Link>
+            <Button variant={"secondary"}>
               <SquarePlay /> Watch Demo
             </Button>
           </div>

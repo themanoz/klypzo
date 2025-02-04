@@ -14,7 +14,7 @@ interface ProjectProps {
 export default function SelectDuration({ onUserSelect }: ProjectProps) {
   return (
     <>
-      <div className="pt-5 space-y-2">
+      <div className="pt-5 space-y-2 px-20">
         <h2>Duration</h2>
         <p className="text-muted-foreground text-sm">
           Select the duration of your video
@@ -26,7 +26,7 @@ export default function SelectDuration({ onUserSelect }: ProjectProps) {
             }
           }}
         >
-          <SelectTrigger className="w-full">
+          <SelectTrigger className="w-[300px] md:w-[600px]">
             <SelectValue placeholder="Select duration" />
           </SelectTrigger>
           <SelectContent>

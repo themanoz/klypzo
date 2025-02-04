@@ -27,7 +27,7 @@ export default function SelectTopic({ onUserSelect }: ProjectProps) {
 
   return (
     <>
-      <div className="pt-5 space-y-2">
+      <div className="pt-5 space-y-2 px-20 w-4/5 lg:w-full">
         <h2>Select topic</h2>
         <p className="text-muted-foreground text-sm">
           What is the topic of your video?
@@ -40,7 +40,7 @@ export default function SelectTopic({ onUserSelect }: ProjectProps) {
             }
           }}
         >
-          <SelectTrigger className="w-[250px]">
+          <SelectTrigger className="w-[300px] md:w-[600px]">
             <SelectValue placeholder="Select topic" />
           </SelectTrigger>
           <SelectContent>
@@ -51,10 +51,11 @@ export default function SelectTopic({ onUserSelect }: ProjectProps) {
             ))}
           </SelectContent>
         </Select>
+
         {selectedTopic === "Custom Prompt" && (
           <Textarea
             placeholder="Enter your custom prompt here..."
-            className="w-[300px]"
+            className="w-[300px] lg:w-[525px]"
             onChange={(e) => onUserSelect("topic", e.target.value)}
           />
         )}

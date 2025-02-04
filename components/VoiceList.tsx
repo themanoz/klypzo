@@ -45,17 +45,17 @@ export default function VoiceList({ onUserSelect }: ProjectProps) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
-  useEffect(() => {
-    async function fetchVoices() {
-      try {
-        const response = await axios.get("/api/text-speech/voices");
-        setVoices(response.data.voices || []);
-      } catch (error) {
-        console.error("Error fetching voices:", error);
-      }
-    }
-    fetchVoices();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchVoices() {
+  //     try {
+  //       const response = await axios.get("/api/text-speech/voices");
+  //       setVoices(response.data.voices || []);
+  //     } catch (error) {
+  //       console.error("Error fetching voices:", error);
+  //     }
+  //   }
+  //   fetchVoices();
+  // }, []);
 
   const playVoice = (url: string, voiceId: string) => {
     if (playing === voiceId) {
@@ -78,7 +78,7 @@ export default function VoiceList({ onUserSelect }: ProjectProps) {
   };
 
   return (
-    <div className="pt-5">
+    <div className="pt-5 px-20">
       <div className="space-y-2">
         <h2>Select Voice</h2>
         <p className="text-muted-foreground text-sm">
@@ -91,15 +91,15 @@ export default function VoiceList({ onUserSelect }: ProjectProps) {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-[250px] justify-between"
+            className="w-[300px] md:w-[600px] justify-between font-normal"
           >
             {value
               ? voices.find((voice) => voice.name === value)?.name
-              : "Select voice..."}
+              : "Select voice"}
             <ChevronsUpDown className="opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[250px] p-0">
+        <PopoverContent className="w-[300px] md:w-[600px] p-0">
           <Command>
             <CommandInput placeholder="Search voice..." />
             <CommandList>
