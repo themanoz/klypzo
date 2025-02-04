@@ -2,7 +2,6 @@
 
 // import Link from "next/link";
 import NavLinks from "../NavLinks";
-import { PowerIcon } from "@heroicons/react/24/outline";
 
 export default function SideBar() {
   return (

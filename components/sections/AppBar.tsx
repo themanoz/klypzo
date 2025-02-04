@@ -2,13 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 // import { ModeToggle } from "./mode-toggle";
 
 export default function AppBar() {
-  const [signedIn, setSignedIn] = useState(false);
-  const router = useRouter();
+  // const [signedIn, setSignedIn] = useState(false);
+  // const router = useRouter();
   const menuItems = ["Home", "Features", "Pricing", "Login"];
 
   return (
@@ -31,7 +31,7 @@ export default function AppBar() {
           />
         </svg>
       </Link>
-      {signedIn ? (
+      {/* {signedIn ? ( */}
         <div className="flex gap-2">
           {menuItems.map((item) => (
             <Link href={""} key={item}>
@@ -45,16 +45,16 @@ export default function AppBar() {
           ))}
           {/* <ModeToggle /> */}
         </div>
-      ) : (
-        <Button
+      {/* ) : ( */}
+        {/* <Button
           variant={"link"}
           onClick={() => {
             setSignedIn(false), router.push("/");
           }}
         >
           Logout
-        </Button>
-      )}
+        </Button> */}
+      {/* )} */}
     </div>
   );
 }

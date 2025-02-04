@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 // import { ThemeProvider } from "@/components/theme-provider";
-import AppBar from "@/components/sections/AppBar";
+// import AppBar from "@/components/sections/AppBar";
 
 export const metadata: Metadata = {
   title: "klypzo - AI Video Generator",

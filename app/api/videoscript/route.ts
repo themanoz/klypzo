@@ -1,8 +1,5 @@
 import { chatSession } from "@/lib/ai";
 import { NextResponse, NextRequest } from "next/server";
-import Together from "together-ai";
-
-const together = new Together({ apiKey: process.env.TOGETHER_API_KEY });
 
 export async function POST(req: NextRequest) {
   try {

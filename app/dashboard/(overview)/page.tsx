@@ -1,6 +1,6 @@
 // import RevenueChart from "@/app/ui/dashboard/revenue-chart";
 // import LatestInvoices from "@/app/ui/dashboard/latest-invoices";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import Dashboard from "../_components/Dashboard";
 // import { RevenueChartSkeleton , LatestInvoicesSkeleton , CardSkeleton } from "@/app/ui/skeletons";
 // import CardWrapper from "@/app/ui/dashboard/cards"; 

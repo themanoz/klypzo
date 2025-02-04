@@ -21,6 +21,7 @@ function Dashboard() {
 
   const onClickCreate = () => {
     // getVideoScript();
+    console.log("FormData: ", formData);
   };
   return (
       <div className="grid grid-cols-2 gap-6 py-8 px-4">

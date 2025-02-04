@@ -40,7 +40,7 @@ export default function VoiceList({ onUserSelect }: ProjectProps) {
   const [audioInstance, setAudioInstance] = useState<HTMLAudioElement | null>(
     null
   );
-  const [selectedVoice, setSelectedVoice] = useState("");
+  // const [selectedVoice, setSelectedVoice] = useState("");
 
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
@@ -111,7 +111,7 @@ export default function VoiceList({ onUserSelect }: ProjectProps) {
                     value={voice.name}
                     onSelect={(currentValue) => {
                       setValue(currentValue === value ? "" : currentValue);
-                      setSelectedVoice(currentValue);
+                      // setSelectedVoice(currentValue);
                       onUserSelect("voiceId", voice.voice_id)
                       setOpen(false);
                     }}

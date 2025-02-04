@@ -21,7 +21,9 @@ export default function SelectDuration({ onUserSelect }: ProjectProps) {
         </p>
         <Select
           onValueChange={(value) => {
-            value != "Custom Prompt" && onUserSelect("duration", value);
+            if (value !== "Custom Prompt") {
+              onUserSelect("duration", value);
+            }
           }}
         >
           <SelectTrigger className="w-full">

@@ -35,7 +35,9 @@ export default function SelectTopic({ onUserSelect }: ProjectProps) {
         <Select
           onValueChange={(topic) => {
             setSelectedTopic(topic);
-            topic != "Custom Prompt" && onUserSelect("topic", topic);
+            if (topic !== "Custom Prompt") {
+              onUserSelect("topic", topic);
+            }
           }}
         >
           <SelectTrigger className="w-[250px]">
