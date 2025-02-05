@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CirclePause, CirclePlay } from "lucide-react";
@@ -44,18 +44,19 @@ export default function VoiceList({ onUserSelect }: ProjectProps) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
-  setVoices([
-    {
-      voice_id: "sdfadfa567df8a9sdf",
-      name: "Brian",
-      labels: {
-        gender: "Male",
-        use_case: "Social media",
+  useEffect(() => {
+    setVoices([
+      {
+        voice_id: "sdfadfa567df8a9sdf",
+        name: "Brian",
+        labels: {
+          gender: "Male",
+          use_case: "Social media",
+        },
+        preview_url: "asdfasdfadfasdfasdfasdf",
       },
-      preview_url: " asdfasdfadfasdfasdfasdf",
-    },
-  ]);
-
+    ]);
+  }, []);
   // useEffect(() => {
   //   async function fetchVoices() {
   //     try {
