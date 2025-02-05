@@ -732,6 +732,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-alert-dialog@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "@radix-ui/react-alert-dialog@npm:1.1.5"
+  dependencies:
+    "@radix-ui/primitive": 1.1.1
+    "@radix-ui/react-compose-refs": 1.1.1
+    "@radix-ui/react-context": 1.1.1
+    "@radix-ui/react-dialog": 1.1.5
+    "@radix-ui/react-primitive": 2.0.1
+    "@radix-ui/react-slot": 1.1.1
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 853a06e5ddbf742f2374e5d623d87755c58bb7ae45f70a4db7fcd98303d2fa748c72e98fc538f92d546a58e63d79449ef11ae1a870b37e78bb102c90b51002b8
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-arrow@npm:1.1.1":
   version: 1.1.1
   resolution: "@radix-ui/react-arrow@npm:1.1.1"
@@ -910,7 +934,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-dialog@npm:^1.1.5":
+"@radix-ui/react-dialog@npm:1.1.5, @radix-ui/react-dialog@npm:^1.1.5":
   version: 1.1.5
   resolution: "@radix-ui/react-dialog@npm:1.1.5"
   dependencies:
@@ -1479,6 +1503,31 @@ __metadata:
     "@types/react":
       optional: true
   checksum: ac391b921dcde1a71db8307247b36cd6908e0886d7a7b0babeb25158292bc29b61ccfb3f83279bfad11fe1f0f90e3e2f3de93b1174f36d107d77b073fe1a652a
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-switch@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@radix-ui/react-switch@npm:1.1.2"
+  dependencies:
+    "@radix-ui/primitive": 1.1.1
+    "@radix-ui/react-compose-refs": 1.1.1
+    "@radix-ui/react-context": 1.1.1
+    "@radix-ui/react-primitive": 2.0.1
+    "@radix-ui/react-use-controllable-state": 1.1.0
+    "@radix-ui/react-use-previous": 1.1.0
+    "@radix-ui/react-use-size": 1.1.0
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 5a5320f27391a9bceb189cfdeec1d86346ce6f6bab1df5b03fdf46a1fc95def1e6a04c25cb4af08db8a657bc3b80f8386b456d57cfef9aedc9cdc2d41bc54dda
   languageName: node
   linkType: hard
 
@@ -6645,6 +6694,7 @@ __metadata:
     "@headlessui/react": ^2.2.0
     "@heroicons/react": ^2.2.0
     "@radix-ui/react-accordion": ^1.2.2
+    "@radix-ui/react-alert-dialog": ^1.1.5
     "@radix-ui/react-avatar": ^1.1.2
     "@radix-ui/react-dialog": ^1.1.5
     "@radix-ui/react-dropdown-menu": ^2.1.5
@@ -6653,6 +6703,7 @@ __metadata:
     "@radix-ui/react-progress": ^1.1.1
     "@radix-ui/react-select": ^2.1.5
     "@radix-ui/react-slot": ^1.1.1
+    "@radix-ui/react-switch": ^1.1.2
     "@radix-ui/react-tabs": ^1.1.2
     "@types/node": ^20
     "@types/react": ^19

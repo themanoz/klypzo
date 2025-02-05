@@ -20,7 +20,7 @@ export default function AppBar() {
   const { signOut } = useClerk();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const menuItems = ["home", "features", "pricing", "signin"];
+  const menuItems = ["/", "features", "pricing", "signin"];
 
   if (!isLoaded) {
     return null;
@@ -56,7 +56,7 @@ export default function AppBar() {
       </div>
 
       <div className="hidden sm:flex items-center gap-4">
-        {user ? (
+        {!user ? (
           // <ul className="flex gap-3">
           //   <li>
           //     <Link href={"/pricing"}>
@@ -86,10 +86,10 @@ export default function AppBar() {
             {menuItems.map((item) => (
               <Link href={`${item}`} key={item}>
                 <Button
-                  variant={item === "Login" ? "ghost" : "link"}
+                  variant={item === "signin" ? "ghost" : "link"}
                   className="text-black dark:text-white font-medium text-md"
                 >
-                  {item}
+                  {item === "/" ? "home" : item}
                 </Button>
               </Link>
             ))}
