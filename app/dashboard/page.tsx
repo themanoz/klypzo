@@ -11,7 +11,7 @@ function Dashboard() {
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
 
   const onHandleInputChange = (fieldName: string, fieldValue: string) => {
-    console.log(fieldName, fieldValue);
+    // console.log(fieldName, fieldValue);
     setFormData((prev) => ({
       ...prev,
       [fieldName]: fieldValue,
@@ -20,7 +20,7 @@ function Dashboard() {
 
   const onClickCreate = () => {
     // getVideoScript();
-    console.log("FormData: ", formData);
+    // console.log("FormData: ", formData);
   };
   
   return (
