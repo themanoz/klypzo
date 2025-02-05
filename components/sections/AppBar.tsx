@@ -95,9 +95,19 @@ export default function AppBar() {
             ))}
           </div>
         ) : (
-          <Button variant={"ghost"} onClick={() => {
-            signOut();
-          }}>Logout</Button>
+          <div className="flex items-center">
+            <Button variant={"secondary"} size={"sm"}>
+              Credits: 100/10000
+            </Button>
+            <Button
+              variant={"ghost"}
+              onClick={() => {
+                signOut();
+              }}
+            >
+              Logout
+            </Button>
+          </div>
         )}
 
         {/* <div className="flex items-center gap-4">

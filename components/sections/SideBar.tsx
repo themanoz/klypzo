@@ -9,7 +9,7 @@ const links = [
   { name: "Dashboard", href: "/dashboard" },
   { name: "History", href: "/dashboard/history" },
   { name: "Billing", href: "/dashboard/billing" },
-  { name: "Settings", href: "/dashboard/settings" },
+  { name: "Settings", href: "/dashboard/settings/account" },
 ];
 
 export default function SideBar() {

@@ -16,6 +16,7 @@ function History() {
 
   return (
     <div className="px-6 md:px-12 lg:px-28">
+      <h2 className="mb-4 text-lg font-medium">Generations</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
         {videoGenerations.map(({ name, videoUrl }) => (
           <div key={name} className="border px-2 py-2 rounded-md w-[300px] md:w-[280px] lg:w-[250px]">

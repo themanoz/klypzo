@@ -1365,6 +1365,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-progress@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/react-progress@npm:1.1.1"
+  dependencies:
+    "@radix-ui/react-context": 1.1.1
+    "@radix-ui/react-primitive": 2.0.1
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 823a4c687cf33aa94a09aeaec411bda52833b0602213568da470b07e44505bf7d99606d3a098e93491038ff8caa0aa966d2de437bc4c06562a50d0b2d5b65087
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-roving-focus@npm:1.1.1":
   version: 1.1.1
   resolution: "@radix-ui/react-roving-focus@npm:1.1.1"
@@ -6630,6 +6650,7 @@ __metadata:
     "@radix-ui/react-dropdown-menu": ^2.1.5
     "@radix-ui/react-label": ^2.1.1
     "@radix-ui/react-popover": ^1.1.5
+    "@radix-ui/react-progress": ^1.1.1
     "@radix-ui/react-select": ^2.1.5
     "@radix-ui/react-slot": ^1.1.1
     "@radix-ui/react-tabs": ^1.1.2

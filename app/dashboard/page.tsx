@@ -26,6 +26,7 @@ function Dashboard() {
   return (
     <div className="h-fit flex flex-col lg:flex-row items-center justify-center gap-32">
       <div>
+        <h2 className="px-20 font-medium text-lg">Welcome, Manoj</h2>
         <SelectTopic onUserSelect={onHandleInputChange} />
         <VoiceList onUserSelect={onHandleInputChange} />
         <SelectDuration onUserSelect={onHandleInputChange} />
