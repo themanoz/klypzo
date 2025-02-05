@@ -13,8 +13,8 @@ function PasswordChange({ label }: PasswordProps) {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="space-y-1">
-      <Label>{label}</Label>
-      <div className="relative w-2/5">
+      <Label className="text-sm">{label}</Label>
+      <div className="relative md:w-[400px] lg:w-2/5">
         <Input
           type={showPassword ? "text" : "password"}
           id="password"

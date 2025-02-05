@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-fit px-28">
+    <div className="flex h-fit md:px-10 lg:px-28">
       <div className="flex flex-col">
         <h2 className="text-lg font-medium">Settings</h2>
-        <aside className="w-64 px-6 mt-4">
+        <aside className="md:w-40 lg:w-64 md:px-2 lg:px-6 mt-4 bg-gray-300">
           <nav className="space-y-3">
             <Link
               href="/dashboard/settings/account"
-              className="block text-gray-700 hover:text-black"
+              className="block text-gray-700 hover:text-black text-sm"
             >
               Account
             </Link>
@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Link> */}
             <Link
               href="/dashboard/settings/change-password"
-              className="block text-gray-700 hover:text-black"
+              className="block text-gray-700 hover:text-black text-sm"
             >
               Change Password
             </Link>
