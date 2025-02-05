@@ -55,7 +55,7 @@ export default function SelectTopic({ onUserSelect }: ProjectProps) {
         {selectedTopic === "Custom Prompt" && (
           <Textarea
             placeholder="Enter your custom prompt here..."
-            className="w-[300px] lg:w-[525px]"
+            className="w-[300px] md:w-[600px] lg:w-[600px]"
             onChange={(e) => onUserSelect("topic", e.target.value)}
           />
         )}

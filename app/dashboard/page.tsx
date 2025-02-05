@@ -43,7 +43,7 @@ function Dashboard() {
           width={280}
           height={440}
           alt="image"
-          className="rounded-xl border-2 border-slate-800 w-[300px] lg:w-[380px] h-[530px]"
+          className="rounded-xl border-2 border-slate-800 w-[300px] lg:w-[320px] h-[550px]"
         />
         <p className="text-xs text-muted-foreground">
           Note: This is a placeholder, final video will be rendered here.{" "}
