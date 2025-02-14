@@ -16,7 +16,7 @@ import { CreditCard, LogOut, Menu, Settings, User, X, Zap } from "lucide-react";
 import { ModeToggle } from "../mode-toggle";
 
 export default function AppBar() {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuItems = ["/", "features", "pricing", "signin"];
