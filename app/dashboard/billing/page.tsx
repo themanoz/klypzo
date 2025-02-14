@@ -12,7 +12,7 @@ function Billing() {
     },
     {
       name: "Generations",
-      count: 13,
+      count: 1,
       generations: 100,
     },
   ];
@@ -42,7 +42,7 @@ function Billing() {
 
             <h2 className="font-medium mt-24">Monthly Plan</h2>
             <p className="text-3xl font-medium">
-              $40 <span className="text-sm">/ month</span>
+              $29 <span className="text-sm">/ month</span>
             </p>
           </div>
 

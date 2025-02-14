@@ -33,7 +33,7 @@ export default function ModalVideo({
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <div id="demo" className="flex justify-center border rounded-3xl border-gray-800 w-4/6">
+    <div id="demo" className="flex justify-center dark:border rounded-3xl dark:border-gray-800 w-4/6">
       <button
         className="group relative flex items-center justify-center rounded-3xl focus:outline-none focus-visible:ring focus-visible:ring-indigo-300"
         onClick={() => {

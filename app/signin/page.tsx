@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useSignIn } from "@clerk/nextjs";
+// import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
@@ -16,46 +16,46 @@ import {
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff } from "lucide-react";
-import { ClerkAPIError } from '@clerk/types'
-import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
+// import { ClerkAPIError } from '@clerk/types'
+// import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
 
 export default function Signin() {
-  const { isLoaded, signIn, setActive } = useSignIn();
+  // const { isLoaded, signIn, setActive } = useSignIn();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
-const [errors, setErrors] = React.useState<ClerkAPIError[]>();
+// const [errors, setErrors] = React.useState<ClerkAPIError[]>();
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
-  if (!isLoaded) {
-    return null;
-  }
+  // if (!isLoaded) {
+  //   return null;
+  // }
 
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!isLoaded) {
-      return;
-    }
+  // async function submit(e: React.FormEvent) {
+  //   e.preventDefault();
+  //   if (!isLoaded) {
+  //     return;
+  //   }
 
-    try {
-      const result = await signIn.create({
-        identifier: emailAddress,
-        password,
-      });
+  //   try {
+  //     const result = await signIn.create({
+  //       identifier: emailAddress,
+  //       password,
+  //     });
 
-      if (result.status === "complete") {
-        await setActive({
-          session: result.createdSessionId,
-        });
-        router.push("/dashboard");
-      } else {
-        console.error(JSON.stringify(result, null, 2));
-      }
-    } catch (err) {
-      if (isClerkAPIResponseError(err)) setErrors(err.errors)
-      console.error(JSON.stringify(err, null, 2));
-    }
-  }
+  //     if (result.status === "complete") {
+  //       await setActive({
+  //         session: result.createdSessionId,
+  //       });
+  //       router.push("/dashboard");
+  //     } else {
+  //       console.error(JSON.stringify(result, null, 2));
+  //     }
+  //   } catch (err) {
+  //     // if (isClerkAPIResponseError(err)) setErrors(err.errors)
+  //     console.error(JSON.stringify(err, null, 2));
+  //   }
+  // }
 
   return (
     <div className="flex items-center justify-center mt-32 bg-background">
@@ -66,7 +66,7 @@ const [errors, setErrors] = React.useState<ClerkAPIError[]>();
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <form onSubmit={submit} className="space-y-4">
+          <form className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -100,11 +100,11 @@ const [errors, setErrors] = React.useState<ClerkAPIError[]>();
                 </button>
               </div>
             </div>
-            {errors && (
+            {/* {errors && (
               <Alert variant="destructive">
                 <AlertDescription>{errors.map((error) => error.message)}</AlertDescription>
               </Alert>
-            )}
+            )} */}
             <Button type="submit" className="w-full">
               Sign In
             </Button>

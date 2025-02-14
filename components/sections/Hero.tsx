@@ -3,7 +3,7 @@ import { WordRotate } from "@/components/ui/word-rotate";
 import { Button } from "@/components/ui/button";
 // import ListVideos from "@/components/ListVideos";
 import ModalVideo from "@/components/modal-video";
-import dark from "@/public/dark.png";
+import darkdemotemplate from "@/public/darkdemotemplate.png";
 import Link from "next/link";
 
 export default function Hero() {
@@ -35,7 +35,7 @@ export default function Hero() {
         {/* <ListVideos /> */}
       </div>
       <ModalVideo
-        thumb={dark}
+        thumb={darkdemotemplate}
         thumbWidth={1920}
         thumbHeight={1080}
         thumbAlt="Modal video thumbnail"

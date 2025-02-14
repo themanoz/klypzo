@@ -39,16 +39,18 @@ function Dashboard() {
       </div>
 
       <div className="flex flex-col text-center justify-center space-y-2 px-6">
-        <Image
+      <Image
           src={"/img.jpg"}
           width={280}
           height={440}
           alt="image"
           className="rounded-xl border-2 border-slate-800 w-[300px] lg:w-[320px] h-[550px]"
         />
+        <Button className="w-[300px] lg:w-[320px]">Download</Button>
         <p className="text-xs text-muted-foreground">
           Note: This is a placeholder, final video will be rendered here.{" "}
         </p>
+        
       </div>
     </div>
   );

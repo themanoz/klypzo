@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-// import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 import AppBar from "@/components/sections/AppBar";
-import { ClerkProvider } from "@clerk/nextjs";
+// import Footer from "@/components/sections/Footer";
+// import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "klypzo - AI Video Generator",
@@ -21,15 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    // <ClerkProvider>
       <html lang="en">
         <body className={`${spaceGrotesk.className} `}>
-          {/* <ThemeProvider attribute="class" defaultTheme="system"> */}
+          <ThemeProvider attribute="class" defaultTheme="system">
           <AppBar />
           {children}
-          {/* </ThemeProvider> */}
+          {/* <Footer /> */}
+          </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+    // </ClerkProvider>
   );
 }

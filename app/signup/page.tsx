@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useSignUp } from "@clerk/nextjs";
+// import { useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
@@ -16,75 +16,75 @@ import {
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff } from "lucide-react";
-import { ClerkAPIError } from "@clerk/types";
-import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
+// import { ClerkAPIError } from "@clerk/types";
+// import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
 
 export default function SignUp() {
-  const { isLoaded, signUp, setActive } = useSignUp();
+  // const { isLoaded, signUp, setActive } = useSignUp();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [pendingVerification, setPendingVerification] = useState(false);
   const [code, setCode] = useState("");
-  const [errors, setErrors] = React.useState<ClerkAPIError[]>();
+  // const [errors, setErrors] = React.useState<ClerkAPIError[]>();
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
   
-  if (!isLoaded) {
-    return null;
-  }
+  // if (!isLoaded) {
+  //   return null;
+  // }
 
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!isLoaded) {
-      return;
-    }
+  // async function submit(e: React.FormEvent) {
+  //   e.preventDefault();
+  //   if (!isLoaded) {
+  //     return;
+  //   }
 
-    try {
-      const clerkUser = await signUp.create({
-        emailAddress,
-        password,
-      });
+  //   try {
+  //     const clerkUser = await signUp.create({
+  //       emailAddress,
+  //       password,
+  //     });
 
-      if (!clerkUser.id) {
-        throw new Error("Clerk user ID is undefined");
-      }
+  //     if (!clerkUser.id) {
+  //       throw new Error("Clerk user ID is undefined");
+  //     }
 
-      await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
-      setPendingVerification(true);
-    } catch (err) {
-      if (isClerkAPIResponseError(err)) setErrors(err.errors);
-      console.error(JSON.stringify(err, null, 2));
-    }
-  }
+  //     await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+  //     setPendingVerification(true);
+  //   } catch (err) {
+  //     if (isClerkAPIResponseError(err)) setErrors(err.errors);
+  //     console.error(JSON.stringify(err, null, 2));
+  //   }
+  // }
 
-  async function onPressVerify(e: React.FormEvent) {
-    e.preventDefault();
+  // async function onPressVerify(e: React.FormEvent) {
+  //   e.preventDefault();
 
-    if (!isLoaded) {
-      return;
-    }
+  //   if (!isLoaded) {
+  //     return;
+  //   }
 
-    try {
-      const completeSignUp = await signUp.attemptEmailAddressVerification({
-        code,
-      });
+  //   try {
+  //     const completeSignUp = await signUp.attemptEmailAddressVerification({
+  //       code,
+  //     });
 
-      if (completeSignUp.status !== "complete") {
-        console.log(JSON.stringify(completeSignUp, null, 2));
-        setPendingVerification(true);
-        return;
-      }
+  //     if (completeSignUp.status !== "complete") {
+  //       console.log(JSON.stringify(completeSignUp, null, 2));
+  //       setPendingVerification(true);
+  //       return;
+  //     }
 
-      if (completeSignUp.status === "complete") {
-        await setActive({ session: completeSignUp.createdSessionId });
-        setPendingVerification(false)
-        router.push("/dashboard");
-      }
-    } catch (err) {
-      if (isClerkAPIResponseError(err)) setErrors(err.errors);
-      console.error(JSON.stringify(err, null, 2));
-    }
-  }
+  //     if (completeSignUp.status === "complete") {
+  //       await setActive({ session: completeSignUp.createdSessionId });
+  //       setPendingVerification(false)
+  //       router.push("/dashboard");
+  //     }
+  //   } catch (err) {
+  //     if (isClerkAPIResponseError(err)) setErrors(err.errors);
+  //     console.error(JSON.stringify(err, null, 2));
+  //   }
+  // }
 
   return (
     <div className="flex items-center justify-center mt-32 bg-background">
@@ -96,7 +96,7 @@ export default function SignUp() {
         </CardHeader>
         <CardContent>
           {!pendingVerification ? (
-            <form onSubmit={submit} className="space-y-4">
+            <form className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -130,19 +130,19 @@ export default function SignUp() {
                   </button>
                 </div>
               </div>
-              {errors && (
+              {/* {errors && (
                 <Alert variant="destructive">
                   <AlertDescription>
                     {errors.map((error) => error.message)}
                   </AlertDescription>
                 </Alert>
-              )}
+              )} */}
               <Button type="submit" className="w-full">
                 Sign Up
               </Button>
             </form>
           ) : (
-            <form onSubmit={onPressVerify} className="space-y-4">
+            <form className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="code">Verification Code</Label>
                 <Input
@@ -153,13 +153,13 @@ export default function SignUp() {
                   required
                 />
               </div>
-              {errors && (
+              {/* {errors && (
                 <Alert variant="destructive">
                   <AlertDescription>
                     {errors.map((error) => error.message)}
                   </AlertDescription>
                 </Alert>
-              )}
+              )} */}
               <Button type="submit" className="w-full">
                 Verify Email
               </Button>
