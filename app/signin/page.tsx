@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 // import { useSignIn } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+// import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff } from "lucide-react";
 // import { ClerkAPIError } from '@clerk/types'
 // import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
@@ -25,7 +25,7 @@ export default function Signin() {
   const [password, setPassword] = useState("");
 // const [errors, setErrors] = React.useState<ClerkAPIError[]>();
   const [showPassword, setShowPassword] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
 
   // if (!isLoaded) {
   //   return null;
