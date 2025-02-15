@@ -57,6 +57,7 @@ function Dashboard() {
         <p className="text-xs text-muted-foreground">
           Note: This is a placeholder, final video will be rendered here.{" "}
         </p>
+        {formData.variant}
       </div>
     </div>
   );

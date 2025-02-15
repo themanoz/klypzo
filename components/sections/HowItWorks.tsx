@@ -23,7 +23,7 @@ const steps = [
     title: "Export & Share",
     description:
       "Finally, download the video and share on platforms.",
-    image: "/download.png",
+    image: "/download1.png",
   },
 ];
 
