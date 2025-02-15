@@ -6,9 +6,11 @@ import SelectDuration from "@/components/SelectDuration";
 import { Button } from "@/components/ui/button";
 import VoiceList from "@/components/VoiceList";
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
 
 function Dashboard() {
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
+  const { user } = useUser();
 
   const onHandleInputChange = (fieldName: string, fieldValue: string) => {
     // console.log(fieldName, fieldValue);
@@ -22,24 +24,29 @@ function Dashboard() {
     // getVideoScript();
     // console.log("FormData: ", formData);
   };
-  
+
   return (
     <div className="h-fit flex flex-col lg:flex-row items-center justify-center gap-32">
       <div>
-        <h2 className="px-20 font-medium text-lg">Welcome, Manoj</h2>
+        <h2 className="px-20 font-medium text-lg">
+          Welcome, {user?.emailAddresses[0].emailAddress.split("@")[0]}
+        </h2>
         <SelectTopic onUserSelect={onHandleInputChange} />
         <VoiceList onUserSelect={onHandleInputChange} />
         <SelectDuration onUserSelect={onHandleInputChange} />
         <SelectStyle onUserSelect={onHandleInputChange} />
         <div className="pt-2 px-20">
-          <Button className="w-[300px] md:w-[600px] lg:w-full" onClick={onClickCreate}>
+          <Button
+            className="w-[300px] md:w-[600px] lg:w-full"
+            onClick={onClickCreate}
+          >
             Generate video
           </Button>
         </div>
       </div>
 
       <div className="flex flex-col text-center justify-center space-y-2 px-6">
-      <Image
+        <Image
           src={"/img.jpg"}
           width={280}
           height={440}
@@ -50,7 +57,6 @@ function Dashboard() {
         <p className="text-xs text-muted-foreground">
           Note: This is a placeholder, final video will be rendered here.{" "}
         </p>
-        
       </div>
     </div>
   );

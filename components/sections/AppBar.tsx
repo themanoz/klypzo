@@ -14,13 +14,18 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CreditCard, LogOut, Menu, Settings, User, X, Zap } from "lucide-react";
 import { ModeToggle } from "../mode-toggle";
+import { useClerk, useUser } from "@clerk/nextjs";
 
 export default function AppBar() {
-  const [user, setUser] = useState(true);
+  const { user, isLoaded } = useUser();
+  const { signOut } = useClerk();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuItems = ["/", "features", "pricing", "signin"];
 
+  if (!isLoaded) {
+    return null;
+  }
   return (
     <header className="py-4 px-4 md:px-10 lg:px-36 relative">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -55,7 +60,7 @@ export default function AppBar() {
 
         {/* Desktop menu */}
         <div className="hidden sm:flex items-center gap-4">
-          {user ? (
+          {!user ? (
             <div className="flex gap-2 items-center">
               {menuItems.map((item) => (
                 <Link href={item} key={item}>
@@ -78,12 +83,12 @@ export default function AppBar() {
                 <DropdownMenuTrigger>
                   <Avatar className="w-8 h-8">
                     <AvatarImage src={""} alt="User avatar" />
-                    <AvatarFallback>K</AvatarFallback>
+                    <AvatarFallback>{user.firstName?.charAt(0) || "K"}</AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuLabel className="text-center">
-                    {user || "Kumar"}
+                    {user.emailAddresses[0].emailAddress.split("@")[0] || "Username"}
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <Link href="/dashboard/settings">
@@ -102,7 +107,7 @@ export default function AppBar() {
                     </DropdownMenuItem>
                   </Link>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => signOut()}>
                     <LogOut className="mr-2" /> Logout
                   </DropdownMenuItem>
                 </DropdownMenuContent>

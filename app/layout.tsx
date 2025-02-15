@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import AppBar from "@/components/sections/AppBar";
 // import Footer from "@/components/sections/Footer";
-// import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "klypzo - AI Video Generator",
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // <ClerkProvider>
+    <ClerkProvider>
       <html lang="en">
         <body className={`${spaceGrotesk.className} `}>
           <ThemeProvider attribute="class" defaultTheme="system">
@@ -32,6 +32,6 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
-    // </ClerkProvider>
+   </ClerkProvider>
   );
 }
